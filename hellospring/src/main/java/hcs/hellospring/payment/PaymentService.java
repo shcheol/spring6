@@ -13,7 +13,7 @@ public class PaymentService {
         this.exRateProvider = exRateProvider;
         this.clock = clock;
     }
-    public Payment prepare(Long orderId, String currency, BigDecimal foreignCurrencyAmount) throws IOException {
+    public Payment prepare(Long orderId, String currency, BigDecimal foreignCurrencyAmount) {
 
         BigDecimal exRate = exRateProvider.getExRate(currency);
 
