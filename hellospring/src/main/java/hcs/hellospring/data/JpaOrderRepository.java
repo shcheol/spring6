@@ -1,18 +1,16 @@
 package hcs.hellospring.data;
 
 import hcs.hellospring.order.Order;
+import hcs.hellospring.order.OrderRepository;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.PersistenceContext;
 
-import java.math.BigDecimal;
-
-public class OrderRepository {
+public class JpaOrderRepository implements OrderRepository {
 
 	@PersistenceContext
 	EntityManager em;
 
+	@Override
 	public void save(Order order){
 
 //		EntityTransaction transaction = em.getTransaction();
