@@ -2,15 +2,15 @@ package hcs.hellospring;
 
 import hcs.hellospring.payment.Payment;
 import hcs.hellospring.payment.PaymentService;
-import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.concurrent.TimeUnit;
 
 public class Client {
-    public static void main(String[] args) throws InterruptedException {
-        BeanFactory beanFactory = new AnnotationConfigApplicationContext(PaymentConfig.class);
+    public static void main(String[] args) throws InterruptedException, IOException {
+        AnnotationConfigApplicationContext beanFactory = new AnnotationConfigApplicationContext(PaymentConfig.class);
         PaymentService paymentService = beanFactory.getBean(PaymentService.class);
 
         Payment payment1 = paymentService.prepare(100L, "USD", BigDecimal.valueOf(50.7));

@@ -5,6 +5,7 @@ import hcs.hellospring.exrate.WebApiExRateProvider;
 import hcs.hellospring.payment.ExRateProvider;
 import hcs.hellospring.payment.ExRateProviderStub;
 import hcs.hellospring.payment.PaymentService;
+import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,7 +14,7 @@ import java.time.Clock;
 import java.time.Instant;
 import java.time.ZoneId;
 
-@Configuration
+@TestConfiguration
 public class TestObjectFactory {
     @Bean
     public PaymentService paymentService() {
